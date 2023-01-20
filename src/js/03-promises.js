@@ -28,12 +28,10 @@ function createPromise(position, delay) {
     setTimeout(() => {
       const shouldResolve = Math.random() > 0.3;
       if (shouldResolve) {
-        resolve();
+        resolve({ position, delay });
       } else {
         reject({ position, delay });
       }
     }, delay);
-  }).then(() => {
-    return { position, delay };
   });
 }
